@@ -1,0 +1,30 @@
+{
+  "name": "thermtrip-simulator-2000",
+  "version": "1.0.0",
+  "description": "Truck's containers, thermometers and other equipments simulator",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "build": "flow-remove-types src/ -d transpilled/",
+    "test": "jest src",
+    "lint": "eslint src/**",
+    "coverage": "jest --collectCoverageFrom=src/**.js ---coverage src"
+  },
+  "keywords": [
+    "truck",
+    "container",
+    "thermometer",
+    "simulator"
+  ],
+  "author": "Lucas Rodrigues",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4",
+    "flow-bin": "^0.87.0",
+    "jest": "^23.6.0",
+    "socket.io": "^2.2.0"
+  },
+  "devDependencies": {
+    "flow-remove-types": "^1.2.3"
+  }
+}
