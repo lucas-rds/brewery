@@ -5,9 +5,11 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
+    "serve": "nodemon ./dist/src/index.js",
     "build": "flow-remove-types src/ -d transpilled/",
     "test": "jest src",
-    "lint": "eslint src/**",
+    "lint": "tslint src/**",
+    "watch-ts": "tsc -w",
     "coverage": "jest --collectCoverageFrom=src/**.js ---coverage src"
   },
   "keywords": [
@@ -19,12 +21,20 @@
   "author": "Lucas Rodrigues",
   "license": "ISC",
   "dependencies": {
+    "@types/cors": "^2.8.4",
+    "@types/dotenv": "^6.1.0",
+    "@types/express": "^4.16.0",
+    "@types/socket.io": "^2.1.2",
+    "cors": "^2.8.5",
+    "dotenv": "^6.2.0",
     "express": "^4.16.4",
     "flow-bin": "^0.87.0",
     "jest": "^23.6.0",
+    "rxjs": "^6.3.3",
     "socket.io": "^2.2.0"
   },
   "devDependencies": {
-    "flow-remove-types": "^1.2.3"
+    "tslint": "^5.11.0",
+    "typescript": "^3.2.2"
   }
 }

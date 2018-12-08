@@ -1,0 +1,1 @@
+//# sourceMappingURL=thermometer.js.map

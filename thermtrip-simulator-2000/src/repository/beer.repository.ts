@@ -1,0 +1,31 @@
+import Database from "../database/db";
+import { Observable } from "rxjs";
+import { flatMap, map } from "rxjs/operators";
+import { Beer } from "../domain";
+import { BeerTypes } from "../enums/beer-types";
+
+
+export default class BeerRepository {
+    private connection: Database;
+
+    constructor(databaseConnection: Database) {
+        this.connection = databaseConnection;
+    }
+
+    public getBeersByType(): Observable<any> {
+        return this.connection.fetchBeers()
+            .pipe(
+                map(beers => {
+                    const data: any = {}; // Map<> didnt worked with express for some reason 
+                    data[BeerTypes.IPA] = beers.filter(beer => beer.type == BeerTypes.IPA);
+                    data[BeerTypes.IPA] = beers.filter(beer => beer.type == BeerTypes.IPA);
+                    data[BeerTypes.LAGER] = beers.filter(beer => beer.type == BeerTypes.LAGER);
+                    data[BeerTypes.PALEALE] = beers.filter(beer => beer.type == BeerTypes.PALEALE);
+                    data[BeerTypes.PILSNER] = beers.filter(beer => beer.type == BeerTypes.PILSNER);
+                    data[BeerTypes.STOUT] = beers.filter(beer => beer.type == BeerTypes.STOUT);
+                    data[BeerTypes.WHEATBEER] = beers.filter(beer => beer.type == BeerTypes.WHEATBEER);
+                    return data;
+                })
+            );
+    }
+}

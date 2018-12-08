@@ -1,0 +1,1 @@
+{"version":3,"file":"math-utils.js","sourceRoot":"","sources":["../../../src/utils/math-utils.ts"],"names":[],"mappings":";;AAAA,MAAqB,SAAS;IACnB,MAAM,CAAC,cAAc,CAAC,GAAW,EAAE,GAAW;QACjD,OAAO,IAAI,CAAC,MAAM,EAAE,GAAG,CAAC,GAAG,GAAG,GAAG,CAAC,GAAG,GAAG,CAAC;IAC7C,CAAC;CACJ;AAJD,4BAIC"}
