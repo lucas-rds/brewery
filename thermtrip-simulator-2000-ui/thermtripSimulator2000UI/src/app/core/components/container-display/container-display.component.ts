@@ -6,13 +6,12 @@ import Container from '../../models/Container';
   templateUrl: './container-display.component.html',
   styleUrls: ['./container-display.component.css']
 })
-export class ContainerDisplayComponent implements OnInit {
+export class ContainerDisplayComponent {
 
   @Input() container: Container;
 
-  constructor() { }
-
-  ngOnInit() {
+  public hasErrors() {
+    return this.container.temperature < this.container.minTemperature ||
+      this.container.temperature > this.container.maxTemperature;
   }
-
 }

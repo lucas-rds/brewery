@@ -6,15 +6,12 @@ import { Truck } from '@domain/truck';
 export class TruckMonitor {
 
     private thermometersSubscriptions: Subscription[];
-    private containersWrongTempSubscriptions: Subscription[];
     private enviromentHeatFactor: number = 0;
     private openedDoorPlusHeat: number = 0;
     private containerObservables: BehaviorSubject<any>[];
     private isDoorOpen = false;
 
-    constructor(
-        private truck: Truck
-    ) {
+    constructor(private truck: Truck) {
         enviromentHeat.onHeatChange.subscribe(heat => {
             this.enviromentHeatFactor = heat
             this.openedDoorPlusHeat = heat * 2;
@@ -26,25 +23,16 @@ export class TruckMonitor {
 
     stop(): void {
         this.thermometersSubscriptions.forEach(sub => sub.unsubscribe());
-        this.containersWrongTempSubscriptions.forEach(sub => sub.unsubscribe());
     }
 
     start(io: SocketIO.Server): void {
         io.on(TruckEvents.TRUCK_CONNECTED, socket => {
             console.log('IOT device connected');
-
             socket.emit(TruckEvents.TRUCK_DATA, this.truck.truckToIO());
             socket.on(TruckEvents.OPEN_DOOR, () => this.openedDoor());
             socket.on(TruckEvents.CLOSE_DOOR, () => this.closedDoor());
-
             combineLatest(this.containerObservables)
                 .subscribe(() => socket.emit(TruckEvents.TRUCK_DATA, this.truck.truckToIO()))
-
-            this.containersWrongTempSubscriptions = this.truck.containers
-                .map(container => container.onTemperatureOutOfRange
-                    .subscribe(status => {
-                        console.log('status', 'passou dos limites');
-                    }));
         });
     }
 

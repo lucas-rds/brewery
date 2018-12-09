@@ -1,4 +1,4 @@
-<div class="card digital-text container-display m-2">
+<div class="card digital-text container-display m-2" [ngClass]="{'error':hasErrors()}">
   <h5 class="card-header">{{container.id}}</h5>
   <div class="card-body">
     <div class="row">
@@ -7,8 +7,8 @@
         {{container.temperature | number}}
       </div>
       <div class="col-3">
-        Min: {{container.temperature | number}}<br/>
-        Max: {{container.temperature | number}}
+        Min: {{container.minTemperature | number}} <br/>
+        Max: {{container.maxTemperature | number}}
       </div>
     </div>
   </div>

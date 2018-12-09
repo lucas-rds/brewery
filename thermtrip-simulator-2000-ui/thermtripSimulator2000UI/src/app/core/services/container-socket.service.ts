@@ -18,7 +18,6 @@ export class ContainerSocketService {
   connect() {
     this.socket = this.socketService.connect('localhost:8080');
     this.socketService.onEvent(TruckEvents.TRUCK_DATA).subscribe(data => {
-      console.log(data);
       this.onData$.next(data);
     });
   }
@@ -28,7 +27,7 @@ export class ContainerSocketService {
   }
 
   toggleDoor(isOpened: boolean) {
-    const event = isOpened ? 'OPEN_DOOR' : 'CLOSE_DOOR';
+    const event = isOpened ? TruckEvents.OPEN_DOOR : TruckEvents.CLOSE_DOOR;
     this.socketService.emit(event, isOpened);
   }
 

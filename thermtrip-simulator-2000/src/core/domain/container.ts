@@ -11,11 +11,12 @@ export class Container {
     private onTemperatureOutOfRange$: ReplaySubject<[Container, TemperatureStatus]>;
     private _idealTemperature = 0;
 
-    constructor(private _id: string,
+    constructor(
+        private _id: string,
         private _beers: Beer[],
         minTemperature?: number,
-        maxTemperature?: number) {
-
+        maxTemperature?: number
+    ) {
         this.minTemp = minTemperature || Math.min(..._beers.map(beer => beer.minTemperature));
         this.maxTemp = maxTemperature || Math.max(..._beers.map(beer => beer.maxTemperature));
         this._idealTemperature = (this.minTemp + this.maxTemp) / 2;
@@ -49,7 +50,6 @@ export class Container {
     public get temperature(): number {
         return this.onTemperatureChange$.getValue()[1];
     }
-
 
     public get minTemperature(): number {
         return this.minTemp;
