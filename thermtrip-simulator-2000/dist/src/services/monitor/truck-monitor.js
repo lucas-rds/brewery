@@ -41,7 +41,7 @@ class TruckMonitor {
         this.thermometersSubscriptions = this.truck.containers
             .map(container => container.onTemperatureChange
             .subscribe(temp => {
-            // console.log('nova temperatura', temp);
+            console.log('nova temperatura', temp);
         }));
         this.containersWrongTempSubscriptions = this.truck.containers
             .map(container => container.onTemperatureOutOfRange

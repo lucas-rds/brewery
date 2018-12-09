@@ -4,15 +4,31 @@
     "module": "commonjs",
     "esModuleInterop": true,
     "target": "es6",
-    "noImplicitAny": true,
+    "noImplicitAny": false,
+    "types": [
+      "reflect-metadata"
+    ],
     "moduleResolution": "node",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
     "sourceMap": true,
     "outDir": "dist",
-    "baseUrl": ".",
+    "baseUrl": "./src",
     "paths": {
-      "*": [
-        "node_modules/*",
-        "src/types/*"
+      "@domain/*": [
+        "core/domain/*"
+      ],
+      "@enums/*": [
+        "core/enums/*"
+      ],
+      "@factory/*": [
+        "src/core/factory/*"
+      ],
+      "@services/*": [
+        "src/core/services/*"
+      ],
+      "@repositories/*": [
+        "src/infra/repository/*"
       ]
     },
     "lib": [

@@ -1,0 +1,19 @@
+
+@font-face {
+    font-family: 'digital';
+    src: url('font/digital-7.ttf');
+}
+
+@font-face {
+    font-family: 'abduction2000';
+    src: url('font/abduction2002.ttf');
+}
+
+.digital-text {
+    font-family: 'digital';
+}
+
+.digital-text.green {
+    color: #83D901
+  
+}

@@ -29,7 +29,9 @@
     "dotenv": "^6.2.0",
     "express": "^4.16.4",
     "flow-bin": "^0.87.0",
+    "inversify": "^5.0.1",
     "jest": "^23.6.0",
+    "reflect-metadata": "^0.1.12",
     "rxjs": "^6.3.3",
     "socket.io": "^2.2.0"
   },
