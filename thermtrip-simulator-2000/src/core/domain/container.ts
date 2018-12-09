@@ -2,7 +2,6 @@ import { Beer } from "./beer";
 import { BehaviorSubject, ReplaySubject } from "rxjs";
 import { TemperatureStatus } from "./temperature-status";
 
-
 export class Container {
 
     private minTemp: number;

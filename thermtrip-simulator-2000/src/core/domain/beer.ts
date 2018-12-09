@@ -1,15 +1,22 @@
 import { BeerTypes } from "../../core/enums/beer-types";
 
 export class Beer {
-    type: BeerTypes;
-    minTemperature: number;
-    maxTemperature: number;
+    constructor(
+        private _type: BeerTypes,
+        private _minTemperature: number,
+        private _maxTemperature: number
+    ) { }
 
-    constructor(type: BeerTypes,
-        minTemperature: number,
-        maxTemperature: number) {
-            this.type = type;
-            this.minTemperature = minTemperature;
-            this.maxTemperature = maxTemperature;
+    public get type(): string {
+        return this._type;
     }
+
+    public get minTemperature(): number {
+        return this._minTemperature;
+    }
+
+    public get maxTemperature(): number {
+        return this._maxTemperature;
+    }
+
 }

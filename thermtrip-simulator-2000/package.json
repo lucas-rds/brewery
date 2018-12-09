@@ -7,9 +7,10 @@
     "start": "node index.js",
     "serve": "nodemon ./dist/src/index.js",
     "build": "flow-remove-types src/ -d transpilled/",
-    "test": "jest src",
+    "test": "jest",
     "lint": "tslint src/**",
     "watch-ts": "tsc -w",
+    "watch-test": "jest --watch",
     "coverage": "jest --collectCoverageFrom=src/**.js ---coverage src"
   },
   "keywords": [
@@ -30,12 +31,14 @@
     "express": "^4.16.4",
     "flow-bin": "^0.87.0",
     "inversify": "^5.0.1",
-    "jest": "^23.6.0",
     "reflect-metadata": "^0.1.12",
     "rxjs": "^6.3.3",
     "socket.io": "^2.2.0"
   },
   "devDependencies": {
+    "@types/jest": "^23.3.10",
+    "jest": "^23.6.0",
+    "ts-jest": "^23.10.5",
     "tslint": "^5.11.0",
     "typescript": "^3.2.2"
   }

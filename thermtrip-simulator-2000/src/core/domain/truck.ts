@@ -4,7 +4,7 @@ import { BehaviorSubject } from "rxjs";
 export class Truck {
     private onOpenDoor$: BehaviorSubject<boolean>;
     private onCloseDoor$: BehaviorSubject<boolean>;
-    private _isDoorOpened: boolean;
+    private _isDoorOpened: boolean = false;
 
     constructor(private _containers: Container[]) {
         this.onOpenDoor$ = new BehaviorSubject<boolean>(false);
