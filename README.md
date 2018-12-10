@@ -47,3 +47,25 @@ To start the application simply run: `` npm start `` or `` ng serve ``
 
 The application will be listening in port 4200
 
+
+# About
+
+In this implementation I tried to use a lot of Rxjs, to learn more about the tool. I used socketio to do the real communication and simulate as if the truck had iot devices connected within the containers. I Also used jest to learn it, looks like a great test framework, and I never used it before. The system is also typed with typescript.
+
+The system is supposed to be simple, and the layers are separeted in core and infra.
+
+Core is about domain and bussiness logic, and Infra is all about IoC, databases and repos.
+
+# Roadmap
+
+In the future, the coverage must be increased, actually there are no integration and end-to-end tests in both back and front ends.
+
+Some log mechanism also need to be implemented, i would use wiston, as it is a great log tool.
+
+To add a real database is a great idea. Maybe a lighweight NoSql solution.
+
+# Other info
+As it is just a simulation, there's no email, sound, shake or anything robust to tell the driver that the containers got out of the temperature range.
+When that happens, the container display will become red, so the driver knows about the problem.
+
+The ui display could be some device coupled into the truck or even a app for smartphones.
