@@ -1,4 +1,4 @@
-<div class="card digital-text container-display m-2" [ngClass]="{'error':hasErrors()}">
+<div class="card digital-text container-display m-2" [ngClass]="{'error':hasErrors()}" *ngIf="container">
   <h5 class="card-header">{{container.id}}</h5>
   <div class="card-body">
     <div class="row">

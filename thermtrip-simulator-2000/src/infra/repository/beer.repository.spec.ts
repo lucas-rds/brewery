@@ -14,7 +14,7 @@ describe('assserting that the database and repository', () => {
     })
 
     test('are working as expected', (done) => {
-        const beers = repository.getBeersByType().subscribe(beers => {
+        repository.getBeersByType().subscribe(beers => {
             expect(Object.keys(beers).length).toBe(6);
             done();
         });

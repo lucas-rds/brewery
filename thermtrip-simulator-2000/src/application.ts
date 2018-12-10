@@ -4,7 +4,6 @@ import http from 'http';
 import socketio from 'socket.io';
 import cors from 'cors';
 import { TruckService } from "./core/services/truck/truck-service";
-import { IOTDevice } from "./core/domain";
 
 const PORT = process.env.PORT || 8080;
 

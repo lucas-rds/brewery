@@ -11,7 +11,9 @@ export class ContainerDisplayComponent {
   @Input() container: Container;
 
   public hasErrors() {
-    return this.container.temperature < this.container.minTemperature ||
-      this.container.temperature > this.container.maxTemperature;
+    return this.container ?
+      this.container.temperature < this.container.minTemperature ||
+      this.container.temperature > this.container.maxTemperature
+      : false;
   }
 }

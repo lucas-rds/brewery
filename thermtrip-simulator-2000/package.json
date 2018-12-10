@@ -4,14 +4,13 @@
   "description": "Truck's containers, thermometers and other equipments simulator",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "serve": "nodemon ./dist/src/index.js",
-    "build": "flow-remove-types src/ -d transpilled/",
+    "start": "npm run build && nodemon ./dist/src/index.js",
+    "serve": "concurrently \"npm:watch-ts\" \"nodemon ./dist/src/index.js\"",
+    "build": "tsc",
     "test": "jest",
     "lint": "tslint src/**",
     "watch-ts": "tsc -w",
-    "watch-test": "jest --watch",
-    "coverage": "jest --collectCoverageFrom=src/**.js ---coverage src"
+    "watch-test": "jest --watch"
   },
   "keywords": [
     "truck",
@@ -37,6 +36,7 @@
   },
   "devDependencies": {
     "@types/jest": "^23.3.10",
+    "concurrently": "^4.1.0",
     "jest": "^23.6.0",
     "ts-jest": "^23.10.5",
     "tslint": "^5.11.0",
