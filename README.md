@@ -11,7 +11,10 @@ The backend's folder is: "thermtrip-simulator-2000"
 ## Dependencies
 A full list of dependencies can be found on package.json.
 
-Install the dependencies with the command:
+Nodemon is necessary to be installed globally with:
+`` npm install nodemon -g ``
+
+Install the dependencies with the commands:
 `` npm install ``
 
 ## Tests
